@@ -1,0 +1,6 @@
+httpx
+psycopg[binary]
+apscheduler
+pyyaml
+resend
+python-dotenv

@@ -1,0 +1,22 @@
+name: ""
+email: ""
+status: active
+schedule: "0 8 * * *"  # cron expression, e.g. daily at 08:00
+
+structured_filters:
+  role_keywords: []
+  seniority: []
+  location: ""
+  remote_ok: true
+  salary_min: null
+  salary_currency: ""
+  employment_type: []
+  tech_include: []
+  tech_exclude: []
+  company_size: []
+  industries_exclude: []
+  company_blocklist: []
+  language_requirements: []
+  visa_sponsorship_needed: false
+
+free_text_criteria: ""
