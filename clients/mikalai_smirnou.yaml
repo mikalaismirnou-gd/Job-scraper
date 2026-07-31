@@ -5,11 +5,9 @@ schedule: "30 9 * * *"  # daily at 09:30
 
 structured_filters:
   role_keywords:
+    - "Project Manager"
     - "Program Manager"
-    - "Senior Program Manager"
-    - "Service Delivery Manager"
     - "ITSM"
-    - "IT Service Management"
   seniority:
     - "Senior"
     - "Lead"

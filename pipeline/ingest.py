@@ -14,9 +14,11 @@ FETCH_DAYS = 3
 _NORMALIZE_RE = re.compile(r"[^a-z0-9]+")
 
 
-def fuzzy_key(company: str, title: str, location: str) -> str:
-    raw = f"{company}|{title}|{location}".lower()
-    normalized = _NORMALIZE_RE.sub("", raw)
+def fuzzy_key(company: str, title: str, location: str, remote_flag: bool) -> str:
+    # Companies often repost the same remote role once per city for local-search
+    # visibility, so location is excluded from the key when the role is remote.
+    parts = f"{company}|{title}" if remote_flag else f"{company}|{title}|{location}"
+    normalized = _NORMALIZE_RE.sub("", parts.lower())
     return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
 
 
@@ -35,12 +37,12 @@ def store(conn: psycopg.Connection, vacancies: list[Vacancy]) -> tuple[int, int]
     seen_fuzzy_keys: set[str] = set()
 
     with conn.cursor() as cur:
-        cur.execute("SELECT company, title, location FROM vacancy;")
-        for company, title, location in cur.fetchall():
-            seen_fuzzy_keys.add(fuzzy_key(company or "", title or "", location or ""))
+        cur.execute("SELECT company, title, location, remote_flag FROM vacancy;")
+        for company, title, location, remote_flag in cur.fetchall():
+            seen_fuzzy_keys.add(fuzzy_key(company or "", title or "", location or "", remote_flag))
 
         for vacancy in vacancies:
-            key = fuzzy_key(vacancy["company"], vacancy["title"], vacancy["location"])
+            key = fuzzy_key(vacancy["company"], vacancy["title"], vacancy["location"], vacancy["remote_flag"])
             if key in seen_fuzzy_keys:
                 fuzzy_skipped += 1
                 continue
