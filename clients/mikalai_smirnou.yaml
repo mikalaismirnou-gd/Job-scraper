@@ -1,0 +1,38 @@
+name: "Mikalai Smirnou"
+email: "mikalai.smirnou@gmail.com"
+status: active
+schedule: "30 9 * * *"  # daily at 09:30
+
+structured_filters:
+  role_keywords:
+    - "Program Manager"
+    - "Senior Program Manager"
+    - "Service Delivery Manager"
+    - "ITSM"
+    - "IT Service Management"
+  seniority:
+    - "Senior"
+    - "Lead"
+    - "Director"
+  location: "Gdansk"
+  remote_ok: true
+  salary_min: 20000
+  salary_currency: "PLN"
+  employment_type:
+    - "full-time"
+    - "B2B"
+  tech_include: []
+  tech_exclude: []
+  company_size: []
+  industries_exclude: []
+  company_blocklist: []
+  language_requirements:
+    - "English"
+    - "Polish"
+  visa_sponsorship_needed: false
+
+free_text_criteria: >
+  Open to remote-only or hybrid roles anywhere; on-site roles only if based
+  in Gdansk. Already has a Polish work permit, no visa/relocation support
+  needed. No specific tech stack requirements or dealbreakers beyond the
+  above — open to any company size and industry.

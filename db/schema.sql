@@ -1,7 +1,7 @@
 CREATE TABLE client (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
-    email TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE,
     status TEXT NOT NULL DEFAULT 'active',
     schedule TEXT NOT NULL,
     created_at TIMESTAMPTZ NOT NULL DEFAULT now()
