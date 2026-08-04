@@ -75,7 +75,7 @@ def main() -> None:
     load_dotenv()
     scheduler = build_scheduler()
     for job in scheduler.get_jobs():
-        logger.info("Registered job: %s (next run: %s)", job.name, job.next_run_time)
+        logger.info("Registered job: %s", job.name)
     scheduler.start()
 
 
