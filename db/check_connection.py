@@ -1,13 +1,10 @@
-import os
-
-import psycopg
 from dotenv import load_dotenv
+
+from db.connection import connect
 
 load_dotenv()
 
-url = os.environ["DATABASE_URL"]
-
-with psycopg.connect(url) as conn:
+with connect() as conn:
     with conn.cursor() as cur:
         cur.execute("SELECT current_database(), version();")
         db, version = cur.fetchone()

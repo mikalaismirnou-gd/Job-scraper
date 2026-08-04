@@ -1,6 +1,5 @@
 import hashlib
 import json
-import os
 import re
 
 import psycopg
@@ -8,6 +7,7 @@ from dotenv import load_dotenv
 
 from connectors import adzuna, remoteok, wwr
 from connectors.common import Vacancy
+from db.connection import connect
 
 FETCH_DAYS = 3
 
@@ -71,7 +71,7 @@ def main() -> None:
     vacancies = fetch_all()
     print(f"Total fetched across sources: {len(vacancies)}")
 
-    with psycopg.connect(os.environ["DATABASE_URL"]) as conn:
+    with connect() as conn:
         inserted, fuzzy_skipped = store(conn, vacancies)
         conn.commit()
 

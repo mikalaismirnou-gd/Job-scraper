@@ -1,8 +1,8 @@
-import os
-
 import psycopg
 from dotenv import load_dotenv
 from psycopg.rows import dict_row
+
+from db.connection import connect
 
 
 def score_vacancy(vacancy: dict, filters: dict) -> tuple[int, list[str]] | None:
@@ -86,7 +86,7 @@ def rank_for_client(conn: psycopg.Connection, client_id: int) -> list[dict]:
 
 def main() -> None:
     load_dotenv()
-    with psycopg.connect(os.environ["DATABASE_URL"]) as conn:
+    with connect() as conn:
         with conn.cursor(row_factory=dict_row) as cur:
             cur.execute("SELECT id, name FROM client WHERE status = 'active';")
             clients = cur.fetchall()

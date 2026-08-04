@@ -1,12 +1,11 @@
 import logging
-import os
 
-import psycopg
 from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.cron import CronTrigger
 from dotenv import load_dotenv
 from psycopg.rows import dict_row
 
+from db.connection import connect
 from delivery import digest
 from pipeline import ingest, ranking
 
@@ -19,7 +18,7 @@ INGESTION_SCHEDULE = "0 6 * * *"  # daily at 06:00, ahead of any client's digest
 def ingestion_job() -> None:
     logger.info("Starting shared ingestion run")
     vacancies = ingest.fetch_all()
-    with psycopg.connect(os.environ["DATABASE_URL"]) as conn:
+    with connect() as conn:
         inserted, fuzzy_skipped = ingest.store(conn, vacancies)
         conn.commit()
     logger.info("Ingestion done: inserted=%d, fuzzy_skipped=%d", inserted, fuzzy_skipped)
@@ -27,7 +26,7 @@ def ingestion_job() -> None:
 
 def client_digest_job(client_id: int, client_name: str, client_email: str) -> None:
     logger.info("Building digest for client_id=%d (%s)", client_id, client_name)
-    with psycopg.connect(os.environ["DATABASE_URL"]) as conn:
+    with connect() as conn:
         matches = ranking.rank_for_client(conn, client_id)
         if not matches:
             logger.info("client_id=%d (%s): no matches, skipping send", client_id, client_name)
@@ -41,7 +40,7 @@ def client_digest_job(client_id: int, client_name: str, client_email: str) -> No
 
 
 def load_active_clients() -> list[dict]:
-    with psycopg.connect(os.environ["DATABASE_URL"]) as conn:
+    with connect() as conn:
         with conn.cursor(row_factory=dict_row) as cur:
             cur.execute("SELECT id, name, email, schedule FROM client WHERE status = 'active';")
             return cur.fetchall()

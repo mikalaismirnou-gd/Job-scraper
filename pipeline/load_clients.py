@@ -1,10 +1,11 @@
 import json
-import os
 from pathlib import Path
 
 import psycopg
 import yaml
 from dotenv import load_dotenv
+
+from db.connection import connect
 
 CLIENTS_DIR = Path(__file__).resolve().parent.parent / "clients"
 
@@ -58,7 +59,7 @@ def main() -> None:
     load_dotenv()
     profiles = load_client_files()
 
-    with psycopg.connect(os.environ["DATABASE_URL"]) as conn:
+    with connect() as conn:
         for profile in profiles:
             client_id = upsert_profile(conn, profile)
             print(f"Loaded client_id={client_id}: {profile['name']} <{profile['email']}>")
