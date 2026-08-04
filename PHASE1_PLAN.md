@@ -77,6 +77,9 @@ Email via **Resend**. One digest email per client per scheduled run, listing mat
 
 - Automated feedback capture and ranking-weight adjustment
 - LLM-based ranking + remote-eligibility verification from description text
-- ATS aggregation (Greenhouse, Lever, Ashby, Workable, SmartRecruiters, Personio)
+- ATS aggregation:
+  - Tech-native platforms (Greenhouse, Lever, Ashby, Workable, SmartRecruiters, Personio) — mostly startups/scale-ups, clean public per-company job-board APIs
+  - Enterprise platforms (Workday, SuccessFactors, Taleo) — needed to cover large (500+ headcount) IT employers with a Poland presence, since these typically don't use the tech-native platforms above. Workday exposes a fairly consistent unofficial JSON endpoint (CXS API) behind its public career sites; SuccessFactors and Taleo are less standardized and may require HTML scraping rather than a clean API — expect more per-target integration effort here
+  - Neither category has a global search API: requires a curated target company list (name → ATS platform → board/company slug) rather than one broad query like Adzuna's
 - Telegram source scraping (Telethon) and Polish niche boards (NoFluffJobs, JustJoinIT)
 - pgvector-based fuzzy dedup (embedding similarity), replacing the simpler string-hash dedup used in Phase 1
