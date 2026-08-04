@@ -1,7 +1,7 @@
 name: "Mikalai Smirnou"
 email: "mikalai.smirnou@gmail.com"
 status: active
-schedule: "30 6 * * *"  # daily at 06:30
+schedule: "0 7 * * *"  # daily at 07:00
 
 structured_filters:
   role_keywords:

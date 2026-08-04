@@ -12,7 +12,7 @@ from pipeline import ingest, ranking
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger("orchestrator")
 
-INGESTION_SCHEDULE = "0 6 * * *"  # daily at 06:00, ahead of any client's digest time
+INGESTION_SCHEDULE = "0 5 * * *"  # daily at 05:00, 2h buffer ahead of digest jobs for Phase 2's larger ATS ingestion
 
 
 def ingestion_job() -> None:
