@@ -1,12 +1,9 @@
-import re
 from email.utils import parsedate_to_datetime
 from xml.etree import ElementTree
 
-from connectors.common import Vacancy, cutoff_datetime, http_client
+from connectors.common import REMOTE_HINT, Vacancy, cutoff_datetime, http_client
 
 RSS_URL = "https://weworkremotely.com/remote-jobs.rss"
-
-REMOTE_HINT = re.compile(r"remote|zdaln", re.IGNORECASE)
 
 
 def _split_title(raw_title: str) -> tuple[str, str]:

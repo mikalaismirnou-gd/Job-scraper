@@ -1,15 +1,12 @@
 import os
-import re
 import time
 
-from connectors.common import Vacancy, http_client
+from connectors.common import REMOTE_HINT, Vacancy, http_client
 
 API_URL_TEMPLATE = "https://api.adzuna.com/v1/api/jobs/pl/search/{page}"
 RESULTS_PER_PAGE = 50
 MAX_PAGES = 100  # safety ceiling; loop stops early once a page is empty
 REQUEST_DELAY_SECONDS = 2.5  # keeps us under Adzuna's 25 calls/minute limit
-
-REMOTE_HINT = re.compile(r"remote|zdaln", re.IGNORECASE)
 
 
 def fetch(days: int = 3) -> list[Vacancy]:

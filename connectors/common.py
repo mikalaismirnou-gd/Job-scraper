@@ -1,9 +1,11 @@
+import re
 from datetime import datetime, timedelta, timezone
 from typing import TypedDict
 
 import httpx
 
 USER_AGENT = "Mozilla/5.0 (compatible; job-scraper/0.1)"
+REMOTE_HINT = re.compile(r"remote|zdaln", re.IGNORECASE)
 
 
 class Vacancy(TypedDict):

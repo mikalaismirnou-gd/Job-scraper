@@ -5,11 +5,15 @@ import re
 import psycopg
 from dotenv import load_dotenv
 
-from connectors import adzuna, remoteok, wwr
+from connectors import adzuna, ashby, greenhouse, lever, personio, remoteok, smartrecruiters, wwr
 from connectors.common import Vacancy
 from db.connection import connect
 
 FETCH_DAYS = 3
+
+# Workday omitted for now: its WAF needs more validation at full scale before
+# running unattended in the daily job (see connectors/workday.py).
+CONNECTORS = (remoteok, wwr, adzuna, greenhouse, lever, smartrecruiters, personio, ashby)
 
 _NORMALIZE_RE = re.compile(r"[^a-z0-9]+")
 
@@ -24,7 +28,7 @@ def fuzzy_key(company: str, title: str, location: str, remote_flag: bool) -> str
 
 def fetch_all(days: int = FETCH_DAYS) -> list[Vacancy]:
     vacancies: list[Vacancy] = []
-    for connector in (remoteok, wwr, adzuna):
+    for connector in CONNECTORS:
         fetched = connector.fetch(days=days)
         print(f"{connector.__name__.rsplit('.', 1)[-1]}: fetched {len(fetched)}")
         vacancies.extend(fetched)
