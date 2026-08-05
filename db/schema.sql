@@ -36,3 +36,11 @@ CREATE TABLE delivery (
     status TEXT NOT NULL DEFAULT 'sent',
     PRIMARY KEY (client_id, vacancy_id)
 );
+
+-- The app connects via the `postgres` role, which bypasses RLS regardless.
+-- This blocks Supabase's public REST API (anon/authenticated roles have no
+-- BYPASSRLS) from reading/writing these tables, since we never use that API.
+ALTER TABLE client ENABLE ROW LEVEL SECURITY;
+ALTER TABLE search_profile ENABLE ROW LEVEL SECURITY;
+ALTER TABLE vacancy ENABLE ROW LEVEL SECURITY;
+ALTER TABLE delivery ENABLE ROW LEVEL SECURITY;
