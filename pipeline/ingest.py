@@ -29,8 +29,15 @@ def fuzzy_key(company: str, title: str, location: str, remote_flag: bool) -> str
 def fetch_all(days: int = FETCH_DAYS) -> list[Vacancy]:
     vacancies: list[Vacancy] = []
     for connector in CONNECTORS:
-        fetched = connector.fetch(days=days)
-        print(f"{connector.__name__.rsplit('.', 1)[-1]}: fetched {len(fetched)}")
+        name = connector.__name__.rsplit(".", 1)[-1]
+        try:
+            fetched = connector.fetch(days=days)
+        except Exception as e:
+            # One source's outage (e.g. Adzuna 503s) shouldn't take down ingestion
+            # for every other source too.
+            print(f"{name}: FAILED ({e})")
+            continue
+        print(f"{name}: fetched {len(fetched)}")
         vacancies.extend(fetched)
     return vacancies
 
