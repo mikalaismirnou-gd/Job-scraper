@@ -20,8 +20,9 @@ def ingestion_job() -> None:
     vacancies = ingest.fetch_all()
     with connect() as conn:
         inserted, fuzzy_skipped = ingest.store(conn, vacancies)
+        pruned = ingest.prune_old_vacancies(conn)
         conn.commit()
-    logger.info("Ingestion done: inserted=%d, fuzzy_skipped=%d", inserted, fuzzy_skipped)
+    logger.info("Ingestion done: inserted=%d, fuzzy_skipped=%d, pruned=%d", inserted, fuzzy_skipped, pruned)
 
 
 def client_digest_job(client_id: int, client_name: str, client_email: str) -> None:

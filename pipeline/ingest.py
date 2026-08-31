@@ -10,6 +10,8 @@ from connectors.common import Vacancy
 from db.connection import connect
 
 FETCH_DAYS = 3
+RETENTION_DAYS = 10  # older, undelivered vacancies are pruned so ranking's
+# undelivered-backlog scan (and the table itself) can't grow unbounded
 
 # Workday omitted for now: its WAF needs more validation at full scale before
 # running unattended in the daily job (see connectors/workday.py).
@@ -77,6 +79,21 @@ def store(conn: psycopg.Connection, vacancies: list[Vacancy]) -> tuple[int, int]
     return inserted, fuzzy_skipped
 
 
+def prune_old_vacancies(conn: psycopg.Connection, retention_days: int = RETENTION_DAYS) -> int:
+    # Never removes a vacancy that was actually delivered to someone, so send
+    # history stays intact - only the undelivered backlog is pruned.
+    with conn.cursor() as cur:
+        cur.execute(
+            """
+            DELETE FROM vacancy v
+            WHERE v.created_at < now() - make_interval(days => %s)
+            AND NOT EXISTS (SELECT 1 FROM delivery d WHERE d.vacancy_id = v.id);
+            """,
+            (retention_days,),
+        )
+        return cur.rowcount
+
+
 def main() -> None:
     load_dotenv()
     vacancies = fetch_all()
@@ -84,9 +101,10 @@ def main() -> None:
 
     with connect() as conn:
         inserted, fuzzy_skipped = store(conn, vacancies)
+        pruned = prune_old_vacancies(conn)
         conn.commit()
 
-    print(f"Inserted: {inserted}, skipped as fuzzy duplicates: {fuzzy_skipped}")
+    print(f"Inserted: {inserted}, skipped as fuzzy duplicates: {fuzzy_skipped}, pruned: {pruned}")
 
 
 if __name__ == "__main__":
