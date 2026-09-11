@@ -12,7 +12,8 @@ from pipeline import ingest, ranking
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger("orchestrator")
 
-INGESTION_SCHEDULE = "0 5 * * *"  # daily at 05:00, 2h buffer ahead of digest jobs for Phase 2's larger ATS ingestion
+INGESTION_SCHEDULE = "30 5 * * *"  # daily at 05:30 - shifted 30min past 05:00 to dodge
+# Adzuna's apparent maintenance window there; still 1.5h buffer ahead of digest jobs
 
 
 def ingestion_job() -> None:
