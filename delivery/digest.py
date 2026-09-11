@@ -11,6 +11,11 @@ _APPLY_URL_FIELDS = {
     "remoteok": ("url", "apply_url"),
     "wwr": ("link",),
     "adzuna": ("redirect_url",),
+    "greenhouse": ("absolute_url",),
+    "lever": ("hostedUrl", "applyUrl"),
+    "ashby": ("jobUrl", "applyUrl"),
+    "smartrecruiters": ("postingUrl", "applyUrl"),
+    "personio": ("url",),
 }
 
 

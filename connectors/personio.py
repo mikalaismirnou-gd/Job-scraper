@@ -35,10 +35,12 @@ def fetch(days: int = 3) -> list[Vacancy]:
                 polite_sleep()
 
             response = None
+            job_page_base = None
             for template in XML_URL_TEMPLATES:
                 candidate = client.get(template.format(slug=row["slug"]))
                 if candidate.status_code == 200:
                     response = candidate
+                    job_page_base = str(candidate.url).rsplit("/xml", 1)[0]
                     break
             if response is None:
                 continue
@@ -54,18 +56,22 @@ def fetch(days: int = 3) -> list[Vacancy]:
 
                 title = _field(position, "name")
                 office = _field(position, "office")
+                position_id = _field(position, "id")
 
                 vacancies.append(
                     Vacancy(
                         source="personio",
-                        source_id=_field(position, "id"),
+                        source_id=position_id,
                         title=title,
                         company=row["company"],
                         location=office,
                         salary=None,
                         description=_description(position),
                         remote_flag=bool(REMOTE_HINT.search(f"{title} {office}")),
-                        raw_payload={c.tag: c.text for c in position if c.tag != "jobDescriptions"},
+                        raw_payload={
+                            **{c.tag: c.text for c in position if c.tag != "jobDescriptions"},
+                            "url": f"{job_page_base}/job/{position_id}",
+                        },
                     )
                 )
 

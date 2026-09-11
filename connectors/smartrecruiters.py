@@ -7,13 +7,16 @@ LIST_URL_TEMPLATE = "https://api.smartrecruiters.com/v1/companies/{slug}/posting
 DETAIL_URL_TEMPLATE = "https://api.smartrecruiters.com/v1/companies/{slug}/postings/{job_id}"
 
 
-def _fetch_description(client, slug: str, job_id: str) -> str:
+def _fetch_details(client, slug: str, job_id: str) -> tuple[str, str]:
     response = client.get(DETAIL_URL_TEMPLATE.format(slug=slug, job_id=job_id))
     if response.status_code != 200:
-        return ""
-    sections = response.json().get("jobAd", {}).get("sections", {})
+        return "", ""
+    detail = response.json()
+    sections = detail.get("jobAd", {}).get("sections", {})
     parts = [s.get("text", "") for s in sections.values()]
-    return html_to_text(" ".join(parts))
+    description = html_to_text(" ".join(parts))
+    posting_url = detail.get("postingUrl", "") or detail.get("applyUrl", "")
+    return description, posting_url
 
 
 def fetch(days: int = 3) -> list[Vacancy]:
@@ -47,7 +50,7 @@ def fetch(days: int = 3) -> list[Vacancy]:
                 location_str = location.get("fullLocation", "")
 
                 polite_sleep()
-                description = _fetch_description(client, row["slug"], job["id"])
+                description, posting_url = _fetch_details(client, row["slug"], job["id"])
 
                 vacancies.append(
                     Vacancy(
@@ -60,7 +63,7 @@ def fetch(days: int = 3) -> list[Vacancy]:
                         description=description,
                         remote_flag=bool(location.get("remote"))
                         or bool(REMOTE_HINT.search(f"{title} {location_str}")),
-                        raw_payload=job,
+                        raw_payload={**job, "postingUrl": posting_url},
                     )
                 )
 
