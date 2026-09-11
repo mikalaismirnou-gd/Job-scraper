@@ -62,9 +62,15 @@ def rank_for_client(conn: psycopg.Connection, client_id: int) -> list[dict]:
             raise ValueError(f"No search_profile for client_id={client_id}")
         filters = row["structured_filters"]
 
+        # raw_payload is excluded here (and fetched separately, only for the final
+        # matches below) since it's the largest field per row by far and the
+        # undelivered backlog can be tens of thousands of rows - pulling it for
+        # every candidate is what was OOM-killing this on the 1GB VPS.
         cur.execute(
             """
-            SELECT v.* FROM vacancy v
+            SELECT v.id, v.source, v.source_id, v.title, v.company, v.location,
+                   v.salary, v.description, v.remote_flag, v.created_at
+            FROM vacancy v
             LEFT JOIN delivery d ON d.vacancy_id = v.id AND d.client_id = %s
             WHERE d.vacancy_id IS NULL;
             """,
@@ -72,15 +78,25 @@ def rank_for_client(conn: psycopg.Connection, client_id: int) -> list[dict]:
         )
         candidates = cur.fetchall()
 
-    matches = []
-    for vacancy in candidates:
-        result = score_vacancy(vacancy, filters)
-        if result is None:
-            continue
-        score, reasons = result
-        matches.append({**vacancy, "score": score, "reasoning": "; ".join(reasons)})
+        matches = []
+        for vacancy in candidates:
+            result = score_vacancy(vacancy, filters)
+            if result is None:
+                continue
+            score, reasons = result
+            matches.append({**vacancy, "score": score, "reasoning": "; ".join(reasons)})
 
-    matches.sort(key=lambda m: m["score"], reverse=True)
+        matches.sort(key=lambda m: m["score"], reverse=True)
+
+        if matches:
+            cur.execute(
+                "SELECT id, raw_payload FROM vacancy WHERE id = ANY(%s);",
+                ([m["id"] for m in matches],),
+            )
+            payloads = {row["id"]: row["raw_payload"] for row in cur.fetchall()}
+            for m in matches:
+                m["raw_payload"] = payloads.get(m["id"])
+
     return matches
 
 
