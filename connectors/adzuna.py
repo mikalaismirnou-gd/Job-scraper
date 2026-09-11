@@ -7,6 +7,8 @@ API_URL_TEMPLATE = "https://api.adzuna.com/v1/api/jobs/pl/search/{page}"
 RESULTS_PER_PAGE = 50
 MAX_PAGES = 100  # safety ceiling; loop stops early once a page is empty
 REQUEST_DELAY_SECONDS = 2.5  # keeps us under Adzuna's 25 calls/minute limit
+TRANSIENT_STATUS_CODES = {429, 502, 503, 504}
+MAX_RETRIES = 3  # Adzuna returns 503 fairly often around our 05:00 UTC run time
 
 
 def fetch(days: int = 3) -> list[Vacancy]:
@@ -19,16 +21,21 @@ def fetch(days: int = 3) -> list[Vacancy]:
             if page > 1:
                 time.sleep(REQUEST_DELAY_SECONDS)
 
-            response = client.get(
-                API_URL_TEMPLATE.format(page=page),
-                params={
-                    "app_id": app_id,
-                    "app_key": app_key,
-                    "max_days_old": days,
-                    "results_per_page": RESULTS_PER_PAGE,
-                    "category": "it-jobs",
-                },
-            )
+            for attempt in range(MAX_RETRIES + 1):
+                response = client.get(
+                    API_URL_TEMPLATE.format(page=page),
+                    params={
+                        "app_id": app_id,
+                        "app_key": app_key,
+                        "max_days_old": days,
+                        "results_per_page": RESULTS_PER_PAGE,
+                        "category": "it-jobs",
+                    },
+                )
+                if response.status_code not in TRANSIENT_STATUS_CODES:
+                    break
+                if attempt < MAX_RETRIES:
+                    time.sleep(10 * (attempt + 1))
             response.raise_for_status()
             results = response.json().get("results", [])
             if not results:
