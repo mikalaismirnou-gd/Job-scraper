@@ -1,0 +1,203 @@
+company,tenant,wd_host,site,headcount,industry
+Hitachi,hitachi,wd1,hitachi,288000,конгломерат/электроника
+Citi,citi,wd5,2,226000,банкинг
+Statestreet,statestreet,wd1,global,52000,финансовые услуги
+Freseniusmedicalcare,freseniusmedicalcare,wd3,fme,111000,здравоохранение (диализ)
+Abb,abb,wd3,External_Career_Page,112000,промышленная автоматизация
+BorgWarner,borgwarner,wd5,borgwarner_careers,37500,автокомпоненты
+Aptiv,aptiv,wd5,aptiv_careers,140000,автокомпоненты/электроника
+Advocate Health,aah,wd5,external,160000,здравоохранение
+Rockwellautomation,rockwellautomation,wd1,external_rockwell_automation,26000,промышленная автоматизация
+Rhe (R1111),rhe,wd3,R1111,Неизвестно,Неизвестно
+IQVIA,iqvia,wd1,iqvia,88000,клинические исследования (CRO)
+Bristolmyerssquibb,bristolmyerssquibb,wd5,bms,32500,фармацевтика
+Brenntag,brenntag,wd3,brenntag_jobs,17000,химическая дистрибуция
+Strada,strada,wd12,careers,8000-10000,HR-аутсорсинг/расчёт зарплаты
+Stryker,stryker,wd1,strykercareers,56000,медицинское оборудование
+ICON,icon,wd3,broadbean_external,40000,клинические исследования (CRO)
+Kiongroup,kiongroup,wd3,kiongroup,42000,производство складского оборудования
+Ryder,ryder,wd5,rydercareers,52000,логистика/аренда транспорта
+Reasonable Accommodation Sabre,sabre,wd1,sabrejobs,5000-6500,travel-технологии/IT-услуги
+Woodward,woodward,wd5,woodward,7500-10200,аэрокосмическое машиностроение
+Aviva Investors (External),aviva,wd1,External,39500,страхование/инвестиции
+Mdlz,mdlz,wd3,external,90000,производство продуктов питания
+Medtronic (Redeploymentmedtroniccareers),medtronic,wd1,redeploymentmedtroniccareers,95000,медицинское оборудование
+Medtronic,medtronic,wd1,medtroniccareers,95000,медицинское оборудование
+Synnex,synnex,wd5,tdsynnexcareers,24500,IT-дистрибуция
+Sbdinc,sbdinc,wd1,stanley_black_decker_career_site,45500,производство инструментов
+Pae,pae,wd1,amentum_careers,53000,оборонные/инженерные услуги
+Genpact,genpact,wd108,External_Careers,128000-140000,IT-услуги/аутсорсинг (BPO)
+TTi Group,ttiemea,wd3,TTI,48500,производство электроинструментов
+U.S. Bank,usbank,wd1,us_bank_careers,68500,банкинг
+Ig,ig,wd103,ext_ig,2500-4300,финтех/онлайн-трейдинг
+Carrier,carrier,wd5,jobs,47000,климатическое оборудование (HVAC)
+Cisco,cisco,wd5,cisco_careers,86700,IT/сетевое оборудование
+Airliquidehr,airliquidehr,wd3,airliquideexternalcareer,64000,промышленные газы
+AstraZeneca,astrazeneca,wd3,careers,90000,фармацевтика
+Kyndryl,kyndryl,wd5,kyndrylprofessionalcareers,60000-75000,IT-услуги
+Thermofisher,thermofisher,wd5,thermofishercareers,125000,научное оборудование/биотехнологии
+Company Background Planet,planet,wd3,planet,2500,платёжные технологии (tax-free/hospitality)
+Huntsman Corporation,huntsman,wd1,huntsman,6000,химическая промышленность
+U.S. Bank (Elavon Careers),usbank,wd1,Elavon_Careers,2600-4600,платёжные технологии (эквайринг)
+Jj,jj,wd5,jj,138000,фармацевтика/медтех
+Autodesk,autodesk,wd1,ext,14000,разработка ПО (CAD)
+Nvent,nvent,wd5,nvent,12000,электротехническое оборудование
+Alcon,alcon,wd5,careers_alcon,23000,офтальмология/медоборудование
+Sysco,sysco,wd5,syscocareers,67000,дистрибуция продуктов питания
+Workday,workday,wd5,workday,20500,разработка ПО (HR/финансы)
+Flextronics,flextronics,wd1,careers,150000,контрактное производство электроники
+Lyten,lyten,wd503,lyten_external_career_site,450-600,производство батарей/материалы
+Mksinst (MKSCareersEMEA),mksinst,wd1,MKSCareersEMEA,10400,оборудование для полупроводников
+A.P. Moller - Maersk,maersk,wd3,maersk_careers,107000,логистика/морские перевозки
+Adient (Broadbean External),adient,wd3,broadbean_external,65000,автокомпоненты (автосиденья)
+Remitly,remitly,wd5,remitly_careers,3200-3700,финтех/денежные переводы
+Travelhrportal,travelhrportal,wd1,jobs,3300-3700,travel-технологии (GDS)
+Ac,arrow,wd1,ac,22000,дистрибуция электронных компонентов
+Jci,jci,wd5,jci,87000,системы для зданий (HVAC/автоматизация)
+Mars (External),mars,wd3,External,150000,производство продуктов питания
+Tsys,tsys,wd1,tsys,10000-13000,платёжные технологии (процессинг)
+Hpe,hpe,wd5,acjobsite,67000,IT-оборудование
+Biibhr,biibhr,wd3,external,7500,биотехнологии/фармацевтика
+Abbott,abbott,wd5,abbottcareers,115000,медоборудование/здравоохранение
+Flextronics (Anord Mardix Careers),flextronics,wd1,Anord_Mardix_Careers,150000,производство электрооборудования (ЦОД)
+Avon,avon,wd5,AvonCareers,2800-3800,косметика
+Guidewire,guidewire,wd5,external,3800,разработка ПО (InsurTech)
+Myhr,myhr,wd3,planseegroup_career,11000-14000,производство металлов (вольфрам/молибден)
+Magna,magna,wd3,magna,135000,автокомпоненты
+Revvity,revvity,wd103,external,12000,научное оборудование/биотехнологии
+ABC Financial Services,abcfinancial,wd5,ABCFinancialServices,2000,ПО для фитнес-индустрии (SaaS)
+AMLRightSource,amlrightsource,wd1,amlrightsource,6500-7000,комплаенс/AML-услуги
+Cec,cecentertainment,wd5,cec_careers,17000,семейные развлекательные центры
+Franklintempleton,franklintempleton,wd5,primary-external-1,9800,управление активами
+Roche,roche,wd3,roche-ext,103000,фармацевтика
+Visa,visa,wd5,visa,31600,платежные технологии
+A.P. Moller - Maersk,maersk,wd3,maersk_manual,106800,логистика и судоходство
+SC Johnson Candidate Portal,scj,wd5,external_career_site,13000,производство потребительских товаров
+Mastercard,mastercard,wd1,corporatecareers,33400,платежные технологии
+Unilever,unilever,wd3,unilever_experienced_professionals,96092,производство потребительских товаров (FMCG)
+Trellix,trellix,wd1,enterprisecareers,3900,кибербезопасность
+Trane Technologies,tranetechnologies,wd12,Trane_Technologies_Careers,44000,производство HVAC-оборудования
+Jd,jd,wd103,careers_at_jd,570000,e-commerce и логистика (JD.com)
+Rxo,rxo,wd501,rxojobs,7000-10000,логистика и грузоперевозки
+Logitech,logitech,wd5,logitech,7000,производство периферии/электроники
+Ncratleos,ncratleos,wd1,ext_non_usalteos,20000,банковские технологии (банкоматы)
+Hyva,hyva,wd3,HyvaGroup,3500,производство гидравлического оборудования
+Target,target,wd5,targetcareers,440000,розничная торговля
+Newperkinelmer,newperkinelmer,wd1,external,11900,медицинские технологии/лабораторное оборудование
+Adtran (ADTRAN),adtran,wd3,ADTRAN,3338,телекоммуникационное оборудование
+Aven Hospitality,ah,wd108,avenhospitalityjobs,500-600,ПО для гостиничного бизнеса
+Motorolasolutions,motorolasolutions,wd5,careers,23000,телекоммуникационное оборудование/системы безопасности
+Accelleron,accelleron,wd3,accelleron,2900,производство турбокомпрессоров
+Epiq,epiqsystems,wd503,epiq_careers,8200,юридические услуги (legal tech)
+Urw,urw,wd3,urw_career_site,2000,недвижимость/торговые центры
+Unisys,unisys,wd5,external,15000,IT-услуги
+There's a reason why Fiserv,fiserv,wd5,ext,40000,финтех/платежные технологии
+Tarkett,tarkett,wd3,tarkett_careers,12000,производство напольных покрытий
+Solenis,solenis,wd1,solenis,16000-21000,специальная химия
+RELX,relx,wd3,relx,36000,издательство и аналитика данных
+RELX (LexisNexisLegal),relx,wd3,LexisNexisLegal,36000,юридические информационные услуги
+Air Products,airproducts,wd5,ap0001,21000-23000,промышленные газы
+Fluence Energy,fluenceenergy,wd12,fluenceenergy-jobs,1300-2000,энергетика/накопители энергии
+Papa John's,papajohns,wd1,papajohnscareers,11400,общественное питание (рестораны)
+Solera,solera,wd5,global_career_site,6500-8300,автомобильное ПО/страховые технологии
+Sandvik (Sandvik Jobs),sandvik,wd3,sandvik-jobs,42000,производство горнодобывающего и металлообрабатывающего оборудования
+Myhrabc,myhrabc,wd5,global,46000,фармацевтическая дистрибуция (Cencora)
+Marmon,marmon,wd501,marmon_careers,30000,диверсифицированное промышленное производство
+Intel,intel,wd1,external,85100,производство полупроводников
+Ingrammicro,ingrammicro,wd5,ingrammicro,22200,дистрибуция IT-продукции
+Bridgestone (Wf External Careers),bridgestone,wd5,wf_external_careers,115000,производство шин
+Firststudent,firststudent,wd1,firststudent,50000-60000,транспортные услуги (школьные автобусы)
+Avnet,avnet,wd1,external,14950,дистрибуция электронных компонентов
+ALS,alsglobal,wd103,external,15000-19000,испытания и инспекция (лабораторные услуги)
+Arctic Wolf,arcticwolf,wd1,external,3800,кибербезопасность
+Bpinternational (Bpcwcareerssite),bpinternational,wd3,bpcwcareerssite,93700,нефтегазовая промышленность
+Bpinternational (bpCareers),bpinternational,wd3,bpCareers,93700,нефтегазовая промышленность
+Worldmarket,worldmarket,wd5,cost_plus_world_market_jobs,4000-6800,розничная торговля
+Premier Research,premierresearch,wd12,premierresearch,2900-3100,клинические исследования (CRO)
+Unilever (TMICC),unilever,wd3,TMICC,96092,производство потребительских товаров (FMCG)
+Viatris,viatris,wd5,external,28200,фармацевтика
+RTX,globalhr,wd5,rec_rtx_ext_gateway,180000,аэрокосмическая и оборонная промышленность
+Paloaltonetworks,paloaltonetworks,wd5,panwexternalcareers,16068,кибербезопасность
+Panerabread,panerabread,wd5,panera_careers,36000,общественное питание (рестораны)
+Trimble,trimble,wd1,trimblecareers,11600,геопространственные технологии/ПО
+TransPerfect,transperfect,wd5,transperfect,17000,переводческие услуги и локализация
+Montefiore New Rochelle,montefiore,wd12,new_rochelle,1000-3000,здравоохранение (больница)
+Genpt,genpt,wd1,careers,60000,дистрибуция автозапчастей
+HedgeServ,hedgeserv,wd1,hedgeserv,1900,администрирование фондов (финансовые услуги)
+IFF,iff,wd5,iff_careers,19000-22000,производство ароматизаторов и отдушек
+Hp (Exteu Ac Careersite),hp,wd5,exteu-ac-careersite,55000,производство компьютерной техники
+Huntington,huntington,wd12,hnbcareers,19932,банкинг
+Hempel,hempel,wd3,hempelcareers,7200,производство лакокрасочных покрытий
+Nttlimited,nttlimited,wd3,ntt_careers,40000,IT-услуги и телекоммуникации
+Kyriba,kyriba,wd5,Kyriba-Careers,1400,финансовое ПО (treasury management)
+Bridgestone,bridgestone,wd5,external,115000,производство шин
+Aveva,aveva,wd3,aveva_careers,6500-7600,промышленное ПО
+Cw,cw,wd1,external,52000,коммерческая недвижимость (Cushman & Wakefield)
+Digital Turbine,digitalturbine,wd501,digital_turbine_external_careers,600-1000,мобильная реклама/технологии
+Datasite global recruitment page. This,datasite,wd1,datasite,5000,ПО для M&A сделок (virtual data room)
+Cohesity,cohesity,wd5,cohesity_careers,5800,IT-услуги (резервное копирование данных)
+ESAB,esab,wd5,esabcareers,10300,производство сварочного оборудования
+Lighting,lighting,wd3,jobs-and-careers,27000,производство освещения (Signify)
+Parexel,parexel,wd1,parexel_external_careers,22400,клинические исследования (CRO)
+Forcepoint,forcepoint,wd1,external-careers,1700,кибербезопасность
+Dyson,dyson,wd3,dyson_careers,17000,производство бытовой техники
+Easyservice,easyservice,wd5,mercyhealthcareers,60000,здравоохранение (Mercy Health)
+Edwards Lifesciences,edwards,wd5,edwardscareers,16000,медицинское оборудование
+Erm,erm,wd3,erm_experiencedprofessionals,8000,экологический консалтинг
+CrowdStrike,crowdstrike,wd5,crowdstrikecareers,10500,кибербезопасность
+Chrobinson,chrobinson,wd5,chrobinson,13500,логистика
+Fast Retailing Group (graduates eu Uniqlo),fastretailing,wd3,graduates_eu_Uniqlo,61000,розничная торговля (одежда)
+Embryriddle,embryriddle,wd1,external,7600,высшее образование
+CHEP Brambles,brambles,wd5,brambles_careers,13000,логистика (тара и паллеты)
+Aveva (ETAP Careers),aveva,wd3,ETAP_Careers,7000,промышленное ПО
+Autodesk (Uni),autodesk,wd1,uni,14000,ПО для инженерии и дизайна
+Boeing,boeing,wd1,external_subsidiary,172000,авиастроение
+BSI Group,bsigroup,wd3,BSI_Careers,9200,сертификация и стандартизация
+Auto Club Group (ACG),acg,wd1,careers,9900,страхование/автоуслуги (AAA)
+Asurion,asurion,wd5,asurioncareers_us,15000,страхование техники и устройств
+Autostore,autostore,wd3,autostore,1000,производство робототехники (складская автоматизация)
+AstraZeneca (Emerging Talent),astrazeneca,wd3,Emerging-Talent,94300,фармацевтика
+Amgen,amgen,wd1,careers,28000,биотехнологии/фармацевтика
+Alight,alight,wd5,careers,10000,HR-аутсорсинг/кадровые технологии
+Amplity,amplity,wd1,amplityhealth,1000,фармацевтические услуги (аутсорсинг)
+Astemo,astemo,wd102,global_career_site,80000,производство автокомпонентов
+Avantor,vwr,wd1,avantorjobs,13500,наука о жизни/дистрибуция лаб. оборудования
+Convatec,convatec,wd1,convatec,10500,медицинское оборудование
+Csc,columbiasportswearcompany,wd5,csc_careers,9700,производство одежды/спорттоваров
+Heidelbergmaterials,heidelbergmaterials,wd3,global_hm_career_site,50000,производство стройматериалов (цемент)
+Infobip,infobip,wd3,infobipcareers,4500,телеком/облачные коммуникации
+Jj (NonCompetetiveHiring),jj,wd5,NonCompetetiveHiring,138100,фармацевтика/медтехника (J&J)
+Kion Scs,kiongroup,wd3,kion_scs,42000,производство складской техники/логистическая автоматизация
+KBR,kbr,wd5,kbr_careers,38000,инжиниринг/госконтракты
+Nttlimited (Internal Employees Not On Workday),nttlimited,wd3,internal_employees_not_on_workday,40000,IT-услуги/телеком (NTT Ltd)
+NVIDIA,nvidia,wd5,nvidiaexternalcareersite,36000,производство полупроводников
+Nasdaq,nasdaq,wd1,global_external_site,9500,финансовые биржи/финтех
+Nordson,nordsonhcm,wd501,nordsoncareers,8000,производство промышленного оборудования
+LEGO,lego,wd103,lego_external,31000,производство игрушек
+Littelfuse,littelfuse,wd1,littelfuse-careers,16000,производство электронных компонентов
+LexisNexis® Risk Solutions,relx,wd3,risksolutions,11800,аналитика данных/риск-менеджмент
+GN,gn,wd3,gn-careers,7600,производство аудиотехники/слуховых аппаратов
+Hpe,hpe,wd5,jobsathpe,61000,производство IT-оборудования
+Hubinternational,hubinternational,wd1,hubinternational,23000,страховой брокеридж
+Hp,hp,wd5,externalcareersite,55000,производство компьютеров/принтеров
+Henryschein,henryschein,wd1,external_careers,25000,дистрибуция медицинского/стоматологического оборудования
+RELX (ElsevierJobs),relx,wd3,ElsevierJobs,9500,издательство/научная информация (Elsevier)
+Proofpoint,proofpoint,wd5,proofpointcareers,6500,кибербезопасность
+Philips (Internal Job Postings List For Philips Contingent Workers),philips,wd3,internal-job-postings-list-for-philips-contingent-workers,66000,медицинское оборудование/health tech
+Resmed,resmed,wd3,resmed_external_careers,10600,медицинское оборудование (респираторная терапия)
+Sec,sec,wd3,samsung_careers,262000,производство электроники (Samsung)
+State of Maine (Executive Branch),maine,wd5,executive,12000,государственное управление
+Ryansg,ryansg,wd5,ryan_specialty_career_site,5500,страхование (специализированный брокеридж)
+Sandvik (Dormerpramet Jobs),sandvik,wd3,dormerpramet-jobs,42000,производство промышленного оборудования
+Pfizer (Internaljobs),pfizer,wd1,internaljobs,75000,фармацевтика
+Pfizer,pfizer,wd1,pfizercareers,75000,фармацевтика
+Philips,philips,wd3,jobs-and-careers,66000,медицинское оборудование/health tech
+Tealium,tealium,wd1,Careers,550,ПО для работы с данными (CDP)
+Tencent,tencent,wd1,tencent_careers,110000,интернет-технологии/игры
+UNIQLO,fastretailing,wd3,store_staff_eu_uniqlo,61000,розничная торговля (одежда)
+WP Engine,wpengine,wd1,wp_engine,1000,веб-хостинг/облачные технологии
+Wilson,wilsonhcg,wd5,wilson_careers,1450,HR-услуги (подбор персонала/RPO)
+WeWork,wework,wd1,wework,3750,аренда офисных пространств (коворкинг)
+Workday,workday,wd5,workday_early_career,20400,ПО для HR и финансов (SaaS)
+Worldwide,worldwide,wd1,external,3500,"клинические исследования (CRO, Worldwide Clinical Trials)"
+Zendesk,zendesk,wd1,zendesk,6900,ПО для поддержки клиентов (SaaS)
